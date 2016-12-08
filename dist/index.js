@@ -45,17 +45,18 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var chalk = __webpack_require__(1);
+	chalk = new chalk.constructor({enabled: true});
 	var average = __webpack_require__(10);
 
 	var list = [2, 2, 5];
 	var a = average(list);
 	var m =  'average: ' + a;
-	console.log(chalk.cyan(m)); // 3
+	 m = chalk.cyan(m);
+	console.log(m);
 
 	module.exports = function() {
 	  console.log('hello world');
 	};
-
 
 /***/ },
 /* 1 */

@@ -23,6 +23,6 @@ node src/index.js
 ```
 
 ```
-# does not color the message 
+# works too
 node dist/index.js
 ```
