@@ -1,0 +1,27 @@
+{
+  "name": "webpack-notes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dist": "rm -rf dist; webpack --config webpack.config.js",
+    "dist-dev": "rm -rf dist; webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/givanse/webpack-notes.git"
+  },
+  "author": "@givanse",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/givanse/webpack-notes/issues"
+  },
+  "homepage": "https://github.com/givanse/webpack-notes#readme",
+  "devDependencies": {
+    "webpack": "^1.14.0"
+  },
+  "dependencies": {
+    "chalk": "^1.1.3"
+  }
+}
