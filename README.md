@@ -10,7 +10,7 @@
 ## Execute
 
 ```sh
-  # ES6
+  # CommonJS
   node src/index.js
 
   # ES5
