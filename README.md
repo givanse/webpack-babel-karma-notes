@@ -17,3 +17,9 @@
   # ES5
   node dist/index.js
 ```
+
+## Tests
+
+```
+npm run test
+```

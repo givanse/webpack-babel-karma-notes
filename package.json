@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "karma start --single-run",
     "dist": "rm -rf dist; webpack --config webpack.config.js",
     "dist-dev": "rm -rf dist; webpack --config webpack.config.js",
     "dist-watch": "rm -rf dist; webpack --config webpack.config.js --watch"
@@ -23,7 +23,13 @@
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.9",
     "babel-preset-es2015": "^6.18.0",
+    "chai": "^3.5.0",
     "chalk": "^1.1.3",
+    "karma": "^1.3.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-mocha": "^1.3.0",
+    "karma-webpack": "^1.8.0",
+    "mocha": "^3.2.0",
     "webpack": "^1.14.0"
   }
 }
