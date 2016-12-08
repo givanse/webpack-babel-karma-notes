@@ -30,7 +30,13 @@ module.exports = function(config) {
     },
 
     webpackMiddleware: {
-      stats: 'errors-only'
+      // https://github.com/webpack/webpack/blob/a148d6e754c8895e697152d59e3a0ca5515e56fb/lib/Stats.js#L783
+      stats: 'minimal',
+
+      watchOptions: {
+        aggregateTimeout: 300,
+        poll: true
+      }
     },
 
     webpack: webpackConfig,

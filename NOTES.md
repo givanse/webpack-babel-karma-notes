@@ -26,3 +26,5 @@ node src/index.js
 # works too
 node dist/index.js
 ```
+
+karma is creating a new bundle per test :/
