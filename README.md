@@ -5,12 +5,13 @@
 ```sh
   npm run dist
   npm run dist-dev
+  npm run dist-watch
 ```
 
 ## Execute
 
 ```sh
-  # CommonJS
+  # ES6 
   node src/index.js
 
   # ES5

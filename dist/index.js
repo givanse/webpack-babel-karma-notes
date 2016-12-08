@@ -44,30 +44,86 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var chalk = __webpack_require__(1);
-	chalk = new chalk.constructor({enabled: true});
-	var average = __webpack_require__(10);
+	'use strict';
 
-	var list = [2, 2, 5];
-	var a = average(list);
-	var m =  'average: ' + a;
-	 m = chalk.cyan(m);
-	console.log(m);
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
 
-	module.exports = function() {
+	exports.default = function () {
 	  console.log('hello world');
 	};
 
+	var _average = __webpack_require__(1);
+
+	var _average2 = _interopRequireDefault(_average);
+
+	var _chalk = __webpack_require__(2);
+
+	var _chalk2 = _interopRequireDefault(_chalk);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var chalk = new _chalk2.default.constructor({ enabled: true });
+
+	var list = [2, 2, 5];
+	var a = (0, _average2.default)(list);
+	var m = 'average: ' + a;
+	m = chalk.cyan(m);
+	console.log(m);
+
+	;
+
 /***/ },
 /* 1 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = average;
+	function average(numbers) {
+	  var s = 0;
+	  var _iteratorNormalCompletion = true;
+	  var _didIteratorError = false;
+	  var _iteratorError = undefined;
+
+	  try {
+	    for (var _iterator = numbers[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+	      var n = _step.value;
+
+	      s += n;
+	    }
+	  } catch (err) {
+	    _didIteratorError = true;
+	    _iteratorError = err;
+	  } finally {
+	    try {
+	      if (!_iteratorNormalCompletion && _iterator.return) {
+	        _iterator.return();
+	      }
+	    } finally {
+	      if (_didIteratorError) {
+	        throw _iteratorError;
+	      }
+	    }
+	  }
+
+	  return s / numbers.length;
+	};
+
+/***/ },
+/* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
-	var escapeStringRegexp = __webpack_require__(3);
-	var ansiStyles = __webpack_require__(4);
-	var stripAnsi = __webpack_require__(6);
-	var hasAnsi = __webpack_require__(8);
-	var supportsColor = __webpack_require__(9);
+	var escapeStringRegexp = __webpack_require__(4);
+	var ansiStyles = __webpack_require__(5);
+	var stripAnsi = __webpack_require__(7);
+	var hasAnsi = __webpack_require__(9);
+	var supportsColor = __webpack_require__(10);
 	var defineProps = Object.defineProperties;
 	var isSimpleWindowsTerm = process.platform === 'win32' && !/^xterm/i.test(process.env.TERM);
 
@@ -179,10 +235,10 @@
 	module.exports.stripColor = stripAnsi;
 	module.exports.supportsColor = supportsColor;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 2 */
+/* 3 */
 /***/ function(module, exports) {
 
 	// shim for using process in browser
@@ -368,7 +424,7 @@
 
 
 /***/ },
-/* 3 */
+/* 4 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -385,7 +441,7 @@
 
 
 /***/ },
-/* 4 */
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {'use strict';
@@ -454,10 +510,10 @@
 		get: assembleStyles
 	});
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)(module)))
 
 /***/ },
-/* 5 */
+/* 6 */
 /***/ function(module, exports) {
 
 	module.exports = function(module) {
@@ -473,11 +529,11 @@
 
 
 /***/ },
-/* 6 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var ansiRegex = __webpack_require__(7)();
+	var ansiRegex = __webpack_require__(8)();
 
 	module.exports = function (str) {
 		return typeof str === 'string' ? str.replace(ansiRegex, '') : str;
@@ -485,7 +541,7 @@
 
 
 /***/ },
-/* 7 */
+/* 8 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -495,17 +551,17 @@
 
 
 /***/ },
-/* 8 */
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var ansiRegex = __webpack_require__(7);
+	var ansiRegex = __webpack_require__(8);
 	var re = new RegExp(ansiRegex().source); // remove the `g` flag
 	module.exports = re.test.bind(re);
 
 
 /***/ },
-/* 9 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -559,21 +615,7 @@
 		return false;
 	})();
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
-
-/***/ },
-/* 10 */
-/***/ function(module, exports) {
-
-	module.exports = function average(numbers) {
-	  var s = 0;
-	  for (var i = 0; i < numbers.length; i++) {
-	    var n = numbers[i];
-	    s += n;
-	  }
-	  return s / numbers.length;
-	};
-
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }
 /******/ ]);

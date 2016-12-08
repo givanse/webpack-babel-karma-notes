@@ -1,7 +1,6 @@
-module.exports = function average(numbers) {
-  var s = 0;
-  for (var i = 0; i < numbers.length; i++) {
-    var n = numbers[i];
+export default function average(numbers) {
+  let s = 0;
+  for (let n of numbers) {
     s += n;
   }
   return s / numbers.length;

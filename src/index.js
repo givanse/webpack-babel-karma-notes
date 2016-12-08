@@ -1,13 +1,13 @@
-var chalk = require('chalk');
-chalk = new chalk.constructor({enabled: true});
-var average = require('./average');
+import average from './average';
+import c from 'chalk';
+const chalk = new c.constructor({enabled: true});
 
-var list = [2, 2, 5];
-var a = average(list);
-var m =  'average: ' + a;
- m = chalk.cyan(m);
+const list = [2, 2, 5];
+const a = average(list);
+let m =  'average: ' + a;
+m = chalk.cyan(m);
 console.log(m);
 
-module.exports = function() {
+export default function() {
   console.log('hello world');
 };

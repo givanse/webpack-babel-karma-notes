@@ -1,3 +1,5 @@
+var webpack = require('webpack');
+
 module.exports = {
 
   entry: './src/index.js',
@@ -9,8 +11,19 @@ module.exports = {
 
   module: {
     loaders: [
+      {
+        test: /\.js$/,
+        include: /src/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['es2015']
+        }
+      }
     ]
   },
+
+  plugins: []
 
   //https://webpack.github.io/docs/list-of-plugins.html
   //occurrenceOrder: true,
